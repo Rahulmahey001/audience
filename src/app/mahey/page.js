@@ -1,4 +1,4 @@
-import UnderConstruction from './components/underConstruction';
+import UnderConstruction from '../components/underConstruction';
 
 export default function Page() {
   return (
