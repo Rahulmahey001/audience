@@ -1,6 +1,5 @@
 import { Geist, Geist_Mono } from "next/font/google";
-import AuthProvider from "./components/AuthProvider";
-import "./globals.css";
+import UserProtectedRoute from '../../components/UserProtectedRoute';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,8 +12,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Website Under Construction",
-  description: "We\'re working hard to bring you an amazing website experience",
+  title: "User Dashboard",
+  description: "Welcome to the user dashboard.",
 };
 
 export default function RootLayout({ children }) {
@@ -22,9 +21,10 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >        <AuthProvider>
+      >
+        <UserProtectedRoute>
         {children}
-                </AuthProvider>
+              </UserProtectedRoute>
       </body>
     </html>
   );
